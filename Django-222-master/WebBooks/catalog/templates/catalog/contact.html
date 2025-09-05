@@ -1,0 +1,88 @@
+{% extends "catalog/base.html" %}
+
+{% block header %}
+ <h5>{{ text_head }}</h5>
+{% endblock header %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-4">
+                <div class="card-body text-center">
+                    <h2 class="text-primary mb-3">Свяжитесь с нами</h2>
+                    <p class="fs-5">
+                        Мы всегда рады помочь вам с выбором книг и ответить на все ваши вопросы.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="text-danger"> Контактная информация</h4>
+                            <div class="contact-info">
+                                <p><strong>Телефон:</strong> +7 (999) 123-45-67</p>
+                                <p><strong>Email:</strong> info@gays.ru</p>
+                                <p><strong>Адрес:</strong> г. Альметьевск, ул. Ленина, д. 15</p>
+                                <p><strong> Часы работы:</strong></p>
+                                <ul>
+                                    <li>Пн-Пт: 9:00-21:00</li>
+                                    <li>Сб-Вс: 10:00-20:00</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="text-danger">Обратная связь</h4>
+                            <form method="post">
+                                {% csrf_token %}
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Ваше имя</label>
+                                    <input type="text" class="form-control" id="name" name="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Сообщение</label>
+                                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Отправить</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h4 class="text-danger">Как нас найти</h4>
+                    <div class="map-container" style="height: 300px; background-color: #f8f9fa; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+                        <div class="text-center">
+                            <p class="fs-4">Карта проезда</p>
+                            <p>г. Альметьвск, ул. Ленина, д. 15</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body text-center">
+                    <h4 class="text-danger"> Мы в соцсетях</h4>
+                    <div class="social-links">
+                        <a href="#" class="btn btn-outline-primary me-2 mb-2">VK</a>
+                        <a href="#" class="btn btn-outline-primary me-2 mb-2">Telegram</a>
+                        <a href="#" class="btn btn-outline-primary me-2 mb-2">YouTube</a>
+                        <a href="#" class="btn btn-outline-primary me-2 mb-2">Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
